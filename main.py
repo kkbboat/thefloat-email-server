@@ -61,18 +61,25 @@ def send_email_smtp(to_emails: List[str], subject: str, html_content: str, email
     try:
         msg = MIMEMultipart('alternative')
         msg['Subject'] = subject
-        msg['From'] = email_settings.SMTP_USERNAME
-        msg['To'] = ", ".join(to_emails)
+        msg['From'] = f"{email_settings.SMTP_FROM_NAME} <{email_settings.SMTP_USERNAME}>"
+        msg['To'] = "undisclosed-recipients:;"  # Hides actual recipients
+
         html_part = MIMEText(html_content, 'html')
         msg.attach(html_part)
+
         with smtplib.SMTP(email_settings.SMTP_SERVER, int(email_settings.SMTP_PORT)) as server:
             server.starttls()
             server.login(email_settings.SMTP_USERNAME, email_settings.SMTP_PASSWORD)
-            server.send_message(msg)
+            server.sendmail(
+                from_addr=email_settings.SMTP_USERNAME,
+                to_addrs=to_emails,  # Recipients go here, not in headers
+                msg=msg.as_string()
+            )
         return True
     except Exception as e:
         print(f"Error sending email: {e}")
         return False
+
 
 @app.post("/send-email", response_model=EmailResponse)
 async def send_email(request: SendEmailRequest):
