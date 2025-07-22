@@ -1,0 +1,26 @@
+{
+  "recipients": [
+    "email1@gmail.com",
+    "email2@gmail.com",
+    "email3@gmail.com"
+  ],
+  "payment_id": 123456789,
+  "timestamp": 1751463545,
+  "customer_details": {
+    "name":"Test_customer",
+    "email":"email1@test.com",
+    "phone":"+911122234567"
+  },
+  "booking_details": {
+    "room":"some_room",
+    "dates":"12th dec"
+  },
+  "HTML_PAGE": "<head>\n<meta name=\"viewport\" content=\"width=device-width\" /><!-- IMPORTANT -->\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<title>Order Confirmed</title>\n<style>\n\t/* ------------------------------------- \n\t\t\tGLOBAL \n\t------------------------------------- */\n\t* { \n\t\tmargin:0;\n\t\tpadding:0;\n\t}\n\t* { font-family: \"Helvetica Neue\", \"Helvetica\", Helvetica, Arial, sans-serif; }\n\timg { \n\t\tmax-width: 100%; \n\t}\n\t.collapse {\n\t\tmargin:0;\n\t\tpadding:0;\n\t}\n\tbody {\n\t\t-webkit-font-smoothing:antialiased; \n\t\t-webkit-text-size-adjust:none; \n\t\twidth: 100%!important; \n\t\theight: 100%;\n\t}\n\ta { color: #2BA6CB;}\n\t.btn {\n\t\ttext-decoration:none;\n\t\tcolor:#FFF;\n\t\tbackground-color:#666;\n\t\twidth:80%;\n\t\tpadding:15px 10%;\n\t\tfont-weight:bold;\n\t\ttext-align:center;\n\t\tcursor:pointer;\n\t\tdisplay:inline-block;\n\t}\n\tp.callout {\n\t\tpadding:15px;\n\t\ttext-align:center;\n\t\tbackground-color:#ECF8FF;\n\t\tmargin-bottom: 15px;\n\t}\n\t.callout a {\n\t\tfont-weight:bold;\n\t\tcolor: #2BA6CB;\n\t}\n\t.column table { width:100%;}\n\t.column {\n\t\twidth: 300px;\n\t\tfloat:left;\n\t}\n\t.column tr td { padding: 15px; }\n\t.column-wrap { \n\t\tpadding:0!important; \n\t\tmargin:0 auto; \n\t\tmax-width:600px!important;\n\t}\n\t.columns .column {\n\t\twidth: 280px;\n\t\tmin-width: 279px;\n\t\tfloat:left;\n\t}\n\ttable.columns, table.column, .columns .column tr, .columns .column td {\n\t\tpadding:0;\n\t\tmargin:0;\n\t\tborder:0;\n\t\tborder-collapse:collapse;\n\t}\n\ttable.head-wrap { width: 100%;}\n\t.header.container table td.logo { padding: 15px; }\n\t.header.container table td.label { padding: 15px; padding-left:0px;}\n\ttable.body-wrap { width: 100%;}\n\ttable.footer-wrap { width: 100%;\tclear:both!important;\n\t}\n\t.footer-wrap .container td.content  p { border-top: 1px solid rgb(215,215,215); padding-top:15px;}\n\t.footer-wrap .container td.content p {\n\t\tfont-size:10px;\n\t\tfont-weight: bold;\n\t}\n\th1,h2,h3,h4,h5,h6 {\n\tfont-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif; line-height: 1.1; margin-bottom:15px; color:#000;\n\t}\n\th1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; color: #6f6f6f; line-height: 0; text-transform: none; }\n\th1 { font-weight:200; font-size: 44px;}\n\th2 { font-weight:200; font-size: 37px;}\n\th3 { font-weight:500; font-size: 27px;}\n\th4 { font-weight:500; font-size: 23px;}\n\th5 { font-weight:900; font-size: 17px;}\n\th6 { font-weight:900; font-size: 14px; text-transform: uppercase; color:#444;}\n\t.collapse { margin:0!important;}\n\tp, ul { \n\t\tmargin-bottom: 10px; \n\t\tfont-weight: normal; \n\t\tfont-size:14px; \n\t\tline-height:1.6;\n\t}\n\tp.lead { font-size:17px; }\n\tp.last { margin-bottom:0px;}\n\tul li {\n\t\tmargin-left:5px;\n\t\tlist-style-position: inside;\n\t}\n\thr {\n\t    border: 0;\n\t    height: 0;\n\t    border-top: 1px dotted rgba(0, 0, 0, 0.1);\n\t    border-bottom: 1px dotted rgba(255, 255, 255, 0.3);\n\t}\n\t.products {\n\t\twidth:100%;\n\t\theight:40px;\n\t\tmargin:10px 0 10px 0;\n\t}\n\t.products img {\n\t\tfloat:left;\n\t\theight:40px;\n\t\twidth:auto;\n\t\tmargin-right:20px;\n\t}\n\t.products span {\n\t\tfont-size:17px;\n\t}\n\t.container {\n\t\tdisplay:block!important;\n\t\tmax-width:600px!important;\n\t\tmargin:0 auto!important; \n\t\tclear:both!important;\n\t}\n\t.content {\n\t\tpadding:15px;\n\t\tmax-width:600px;\n\t\tmargin:0 auto;\n\t\tdisplay:block; \n\t}\n\t.content table { width: 100%; }\n\t.clear { display: block; clear: both; }\n\t@media only screen and (max-width: 600px) {\n\t\ta[class=\"btn\"] { display:block!important; margin-bottom:10px!important; background-image:none!important; margin-right:0!important;}\n\t\tdiv[class=\"column\"] { width: auto!important; float:none!important;}\n\t\ttable.social div[class=\"column\"] {\n\t\t\twidth:auto!important;\n\t\t}\n\t}\n</style>\n</head>\n<body bgcolor=\"#FFFFFF\">...[TRUNCATED FOR BREVITY]...</body>\n</html>",
+  "email_settings":{
+    "SMTP_SERVER":"",
+    "SMTP_PORT":"",
+    "SMTP_USERNAME":"",
+    "SMTP_PASSWORD":"",
+    "SMTP_FROM_NAME":""
+  }
+}
