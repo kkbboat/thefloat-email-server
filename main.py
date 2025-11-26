@@ -66,6 +66,7 @@ def send_email_smtp(to_emails: List[str], subject: str, html_content: str, email
 
         html_part = MIMEText(html_content, 'html')
         msg.attach(html_part)
+        print(email_settings.SMTP_SERVER, int(email_settings.SMTP_PORT), email_settings.SMTP_USERNAME, email_settings.SMTP_PASSWORD)
 
         with smtplib.SMTP(email_settings.SMTP_SERVER, int(email_settings.SMTP_PORT)) as server:
             server.starttls()
@@ -105,3 +106,4 @@ async def hello():
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
