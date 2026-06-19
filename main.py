@@ -36,6 +36,10 @@ class SendEmailRequest(BaseModel):
     booking_details: BookingDetails
     HTML_PAGE: str
     email_settings: EmailSettings
+    # Optional per-email subject. When omitted (legacy callers) the handler
+    # falls back to the original "Order Confirmed" subject, so this is fully
+    # backward compatible.
+    subject: Optional[str] = None
 
 class EmailResponse(BaseModel):
     message: str
@@ -89,7 +93,9 @@ async def send_email(request: SendEmailRequest):
             raise HTTPException(status_code=400, detail="At least one recipient is required")
         if not all([request.email_settings.SMTP_SERVER,request.email_settings.SMTP_PORT,request.email_settings.SMTP_USERNAME,request.email_settings.SMTP_PASSWORD,request.email_settings.SMTP_FROM_NAME]):
             raise HTTPException(status_code=400, detail="All email settings are required")
-        subject = f"Order Confirmed - Payment ID: {request.payment_id}"
+        # Honour the caller-supplied subject; fall back to the legacy default so
+        # any older caller that doesn't send one is unaffected.
+        subject = request.subject or f"Order Confirmed - Payment ID: {request.payment_id}"
         html_content = request.HTML_PAGE
         success = send_email_smtp(request.recipients, subject, html_content, request.email_settings)
         if not success:
